@@ -1,0 +1,18 @@
+# Backup
+*.bak
+
+# Executáveis
+*.exe.$$$
+*.exe
+
+# Outros
+*.res 
+*.log 
+*.xdt 
+*.old
+*.xml
+*.txt
+
+# Dbf
+*.dbf
+*.ntx
