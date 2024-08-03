@@ -65,6 +65,8 @@
       <File Filename="1_Main1.prg"/>
       <File Filename="2_BancoDados.prg"/>
       <File Filename="3_lncluir.prg"/>
+      <File Filename="4_Alterar.prg"/>
+      <File Filename="9_Validar.prg"/>
    </Files>
    <Libraries>
       <Library Filename="[xHarbour]rtl.lib"/>
