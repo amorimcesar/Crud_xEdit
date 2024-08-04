@@ -67,6 +67,10 @@
       <File Filename="3_lncluir.prg"/>
       <File Filename="4_Alterar.prg"/>
       <File Filename="9_Validar.prg"/>
+      <File Filename="5_Excluir.prg"/>
+      <File Filename="6_Buscar.prg"/>
+      <File Filename="7_Relatorio.prg"/>
+      <File Filename="8_Tela.prg"/>
    </Files>
    <Libraries>
       <Library Filename="[xHarbour]rtl.lib"/>

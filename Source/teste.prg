@@ -1,14 +1,8 @@
-PROCEDURE MAIN()
+FUNCTION INATIVOS()
 
 LOCAL aCampos, aTitulos
 
-SET CENTURY    ON
-SET EPOCH      TO 1950
-SET DATE       BRITISH
-SET DELETE     ON
-SET EXCLUSIVE  OFF
-
-INICIA_BANCO_DADOS()
+LIMPA_TELA()
 
 @ 01, 00 SAY PadC(" CADASTRO DE CLIENTES ",89)
 @ 01, 02 SAY Date()
@@ -18,19 +12,19 @@ CRIA_FOOTER_MAIN()
 
 SELECT CLIENTES
 
-OrdSetFocus("NOME")
+OrdSetFocus("C_INATIVO")
 DBGoTop()
 
 aTitulos:={"Codigo","Nome" ,"Telefone" }
 aCampos :={"CODIGO", "NOME", "TEL"}
 
-DBEdit(03, 00, 22, 89, aCampos,"CADASTRO_CLIENTES_ATIVOS",,aTitulos)
+DBEdit(03, 00, 22, 89, aCampos,"CADASTRO_CLIENTES_INATIVOS",,aTitulos)
 
-RETURN
+RETURN NIL
 
 *--------------------------------*
 
-FUNCTION CADASTRO_CLIENTES_ATIVOS(nModo)
+FUNCTION CADASTRO_CLIENTES_INATIVOS(nModo)
 
 IF nModo==4
    IF LastKey()==22
@@ -43,6 +37,9 @@ IF nModo==4
       BUSCAR()
     ELSEIF LASTKEY()==-1
       IMPRIMIR()
+    ELSEIF LASTKEY()==-2
+      DBCloseAll()
+      MAIN()
     ELSEIF LastKey()==27
       Quit
    ENDIF

@@ -30,6 +30,7 @@ E a tela inicial terá as seguintes funcionalidades:
 - EXCLUIR (DEL)
 - BUSCAR (LETRA):
 - RELATORIO (F2)
+- SAIR (ESC)
 
 ## Funcionalidades
 
@@ -44,7 +45,7 @@ Abrirá uma nova tela, com os campos:
 | TIPOPESSOA |                                        | F = Pessoa Fisica, J = Pessoa Juridica                                    |
 | CPF        |                                        | CPF, Permitido somente para P. Fisica e que não exista em outro cliente   |
 | CNPJ       |                                        | CNPJ,Permitido somente para P. Juridica e que não exista em outro cliente |
-| TELEFONE   |                                        |                                                                           |
+| TELEFONE   |                                        | Apendas número e com tamanho unico de 15 digitos                          |
 | CADASTRO   | Data atual                             | Data maior ou igual à data atual.                                         |
 | INATIVO    | N                                      | S ou N                                                                    |
 
@@ -54,16 +55,16 @@ Abrirá uma nova tela, com os campos:
 
 Abrirá uma nova tela, com os campos **preenchidos**:
 
-| Campo      | Valor padrão (exibido ao abrir a tela) | Valores válidos                                                           |
-| ---------- | -------------------------------------- | ------------------------------------------------------------------------- |
-| CODIGO     | 0                                      | Esse campo não pode ser alterado, é apenas para visualização.             |
-| NOME       |                                        | Nome não pode ser vazio.                                                  |
-| TIPOPESSOA |                                        | F = Pessoa Fisica, J = Pessoa Juridica                                    |
-| CPF        |                                        | CPF, Permitido somente para P. Fisica e que não exista em outro cliente   |
-| CNPJ       |                                        | CNPJ,Permitido somente para P. Juridica e que não exista em outro cliente |
-| TELEFONE   |                                        |                                                                           |
-| CADASTRO   | Data atual                             | Data maior ou igual à data atual.                                         |
-| INATIVO    | N                                      | S ou N                                                                    |
+| Campo      | Valor padrão (exibido ao abrir a tela) | Valores válidos                                               |
+| ---------- | -------------------------------------- | ------------------------------------------------------------- |
+| CODIGO     | 0                                      | Esse campo não pode ser alterado, é apenas para visualização. |
+| NOME       |                                        | Nome não pode ser vazio.                                      |
+| TIPOPESSOA |                                        | F = Pessoa Fisica, J = Pessoa Juridica                        |
+| CPF        |                                        | Esse campo não pode ser alterado, é apenas para visualização. |
+| CNPJ       |                                        | Esse campo não pode ser alterado, é apenas para visualização. |
+| TELEFONE   |                                        | Apendas número e com tamanho unico de 15 digitos              |
+| CADASTRO   | Data atual                             | Data maior ou igual à data atual.                             |
+| INATIVO    | N                                      | S ou N                                                        |
 
 ### Excluir
 
