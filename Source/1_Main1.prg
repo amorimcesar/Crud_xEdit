@@ -24,13 +24,13 @@ DBGoTop()
 aTitulos:={"Codigo","Nome" ,"Telefone" }
 aCampos :={"CODIGO", "NOME", "TEL"}
 
-DBEdit(03, 00, 22, 89, aCampos,"CADASTRO_CLIENTES_ATIVOS",,aTitulos)
+DBEdit(03, 00, 22, 89, aCampos,"CADASTRO_CLIENTES",,aTitulos)
 
 RETURN
 
 *--------------------------------*
 
-FUNCTION CADASTRO_CLIENTES_ATIVOS(nModo)
+FUNCTION CADASTRO_CLIENTES(nModo)
 
 IF nModo==4
    IF LastKey()==22

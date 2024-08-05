@@ -19,6 +19,5 @@ SELECT CLIENTES
 RLock()
 DELETE
 DBUnlock()
-DBCloseAll()
 
 RETURN NIL

@@ -39,7 +39,7 @@ CRIA_FOOTER_INCLUIR_ALTERAR()
 @ 08,01 SAY "CPF:        "  GET cCPF           PICTURE "999.999.999-99"       WHEN .F.    /**/
 @ 09,01 SAY "CNPJ:       "  GET cCNPJ          PICTURE "99.999.999/9999-99"   WHEN .F.    /**/
 @ 10,01 SAY "TEL:        "  GET cTelefone      PICTURE "(99) 99999-9999"      /**/        VALID !VALIDA_TELEFONE(cTelefone)
-@ 11,01 SAY "CADASTRO:   "  GET dCadastro      /**/                           /**/        VALID dCadastro>=Date()
+@ 11,01 SAY "CADASTRO:   "  GET dCadastro      /**/                           /**/        VALID !VALIDA_DATA(dCadastro)
 @ 12,01 SAY "INATIVO:    "  GET cInativo       PICTURE "@!"                   /**/        VALID (cInativo$"SN")
 
 READ

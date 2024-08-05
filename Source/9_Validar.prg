@@ -14,6 +14,7 @@ lRetorno  :=CLIENTES->(DBSeek(nCodigo))
 
 IF lRetorno
    MessageBox(,"O código informado já existe.","Atenção",MB_ICONSTOP)
+   lRetorno:=.T.
 ENDIF
 
 CLIENTES->(OrdSetFocus(cOrdem))
@@ -33,12 +34,8 @@ cOrdem    :=CLIENTES->(OrdSetFocus("CPF"))
 nRegistro :=CLIENTES->(RecNo())
 lRetorno  :=CLIENTES->(DBSeek(cCPF))
 
-IF lRetorno
-   MessageBox(,"O CPF informado já existe.","Atenção",MB_ICONSTOP)
-ENDIF
-
-IF Empty(cCPF) .OR. Len(AllTrim(cCPF)) < 14
-   MessageBox(,"CPF invalido")
+IF lRetorno .OR. Empty(cCPF) .OR. Len(AllTrim(cCPF)) < 14
+   MessageBox(,"O CPF informado é invalido ou já existe.","Atenção",MB_ICONSTOP)
    lRetorno:=.T.
 ENDIF
 
@@ -59,12 +56,8 @@ cOrdem    :=CLIENTES->(OrdSetFocus("CNPJ"))
 nRegistro :=CLIENTES->(RecNo())
 lRetorno  :=CLIENTES->(DBSeek(cCNPJ))
 
-IF lRetorno
-   MessageBox(,"O CPF informado já existe.","Atenção",MB_ICONSTOP)
-ENDIF
-
-IF Empty(cCNPJ) .OR. Len(AllTrim(cCNPJ)) < 14
-   MessageBox(,"CNPJ invalido")
+IF lRetorno .OR. Empty(cCNPJ) .OR. Len(AllTrim(cCNPJ)) < 18
+   MessageBox(,"O CNPJ informado é invalido ou já existe.","Atenção",MB_ICONSTOP)
    lRetorno:=.T.
 ENDIF
 
@@ -77,26 +70,22 @@ RETURN lRetorno
 
 FUNCTION VALIDA_TELEFONE(cTelefone)
 
-LOCAL lRetorno:=.F.
-
 IF Empty(cTelefone) .OR. Len(AllTrim(cTelefone)) < 15
    MessageBox(,"Telefone invalido","Atenção",MB_ICONSTOP)
-   lRetorno:=.T.
+   RETURN .T.
 ENDIF
 
-RETURN lRetorno
+RETURN .F.
 
 *--------------------------------*
 
 FUNCTION VALIDA_DATA(dCadastro)
 
-LOCAL lRetorno:=.F.
-
 IF Empty(dCadastro) .OR. dCadastro < Date()
    MessageBox(,"Data invalida","Atenção",MB_ICONSTOP)
-   lRetorno:=.T.
+   RETURN .T.
 ENDIF
 
-RETURN lRetorno
+RETURN .F.
 
 *--------------------------------*
