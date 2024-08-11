@@ -8,7 +8,7 @@ LOCAL nArquivo, nRegistro:=0
 LOCAL cCNPJ_CPF, cCRLF:=Chr(13)+Chr(10)
 
 IF CLIENTES->CODIGO==0
-   MessageBox(, "O Arquivo está vazio","Atenção",MB_ICONSTOP)
+   MessageBox(, "O arquivo está vazio","Atenção",MB_ICONSTOP)
    RETURN NIL
 ENDIF
 
@@ -26,7 +26,7 @@ nRegistro:=RecNo()
 DBGoTop()
 
 DO WHILE !Eof()
-   IIF(CLIENTES->TIPOPESSOA="F",cCNPJ_CPF:=CLIENTES->CPF, cCNPJ_CPF:=CLIENTES->CNPJ)
+   IIF(CLIENTES->TIPOPESSOA==e"F",cCNPJ_CPF:=CLIENTES->CPF, cCNPJ_CPF:=CLIENTES->CNPJ)
    FWrite(nArquivo,Str(CLIENTES->CODIGO,6)+" | "+CLIENTES->NOME+" | "+CLIENTES->TEL+" | "+cCNPJ_CPF+cCRLF)
    DBSkip()
 ENDDO

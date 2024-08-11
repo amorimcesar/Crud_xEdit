@@ -62,7 +62,7 @@
       <Type Value="None"/>
    </VCS>
    <Files>
-      <File Filename="1_Main1.prg"/>
+      <File Filename="1_Main.prg"/>
       <File Filename="2_BancoDados.prg"/>
       <File Filename="3_lncluir.prg"/>
       <File Filename="4_Alterar.prg"/>

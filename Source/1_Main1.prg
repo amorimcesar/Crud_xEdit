@@ -1,51 +1,51 @@
-PROCEDURE MAIN()
+ PROCEDURE MAIN()
 
-LOCAL aCampos, aTitulos
+ LOCAL aCampos, aTitulos
 
-SET CENTURY    ON
-SET EPOCH      TO 1950
-SET DATE       BRITISH
-SET DELETE     ON
-SET EXCLUSIVE  OFF
+ SET CENTURY    ON
+ SET EPOCH      TO 1950
+ SET DATE       BRITISH
+ SET DELETE     ON
+ SET EXCLUSIVE  OFF
 
-INICIA_BANCO_DADOS()
+ INICIA_BANCO_DADOS()
 
-@ 01, 00 SAY PadC(" CADASTRO DE CLIENTES ",89)
-@ 01, 02 SAY Date()
-@ 01, 71 SAY Time()
-@ 02, 00 SAY Replicate("-",90)
-CRIA_FOOTER_MAIN()
+ @ 01, 00 SAY PadC(" CADASTRO DE CLIENTES ",89)
+ @ 01, 02 SAY Date()
+ @ 01, 71 SAY Time()
+ @ 02, 00 SAY Replicate("-",90)
+ CRIA_FOOTER_MAIN()
 
-SELECT CLIENTES
+ SELECT CLIENTES
 
-OrdSetFocus("NOME")
-DBGoTop()
+ OrdSetFocus("NOME")
+ DBGoTop()
 
-aTitulos:={"Codigo","Nome" ,"Telefone" }
-aCampos :={"CODIGO", "NOME", "TEL"}
+ aTitulos:={"Codigo","Nome" ,"Telefone" }
+ aCampos :={"CODIGO", "NOME", "TEL"}
 
-DBEdit(03, 00, 22, 89, aCampos,"CADASTRO_CLIENTES",,aTitulos)
+ DBEdit(03, 00, 22, 89, aCampos,"CADASTRO_CLIENTES",,aTitulos)
 
-RETURN
+ RETURN
 
-*--------------------------------*
+ *--------------------------------*
 
-FUNCTION CADASTRO_CLIENTES(nModo)
+ FUNCTION CADASTRO_CLIENTES(nModo)
 
-IF nModo==4
-   IF LastKey()==22
-      INCLUIR()
+ IF nModo==4
+    IF LastKey()==22
+       INCLUIR()
     ELSEIF LastKey()==13
-      ALTERAR()
+       ALTERAR()
     ELSEIF LastKey()==7
-      EXCLUIR()
+       EXCLUIR()
     ELSEIF LastKey()>=32 .AND. LastKey()<127
-      BUSCAR()
+       BUSCAR()
     ELSEIF LASTKEY()==-1
-      IMPRIMIR()
+       IMPRIMIR()
     ELSEIF LastKey()==27
-      Quit
-   ENDIF
-ENDIF
+       Quit
+    ENDIF
+ ENDIF
 
-RETURN 2
+ RETURN 2
